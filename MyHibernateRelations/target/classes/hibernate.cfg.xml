@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/myrelationsexample?serverTimezone=Europe/Warsaw</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">6278962</property>
+        <!-- DB schema will be updated if needed -->
+        <property name="hbm2ddl.auto">create</property> <!-- create (deletes all and creates new) or update (it doesn't delete the "old tables") -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <mapping class="pl.sda.onetoone.entity.Dog"></mapping>
+        <mapping class="pl.sda.onetoone.entity.Owner"></mapping>
+
+        <mapping class="pl.sda.onetomany.entity.Car"></mapping>
+        <mapping class="pl.sda.onetomany.entity.Driver"></mapping>
+
+        <mapping class="pl.sda.manytomany.entity.Employer"></mapping>
+        <mapping class="pl.sda.manytomany.entity.Employee"></mapping>
+
+    </session-factory>
+</hibernate-configuration>
